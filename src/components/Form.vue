@@ -28,9 +28,9 @@
 
 <script setup lang="ts">
 const emit = defineEmits<{
-  (event: "addTask", { tempo: string, tarefa: string }): void;
+  (event: "addTask", data: { tempo: string; tarefa: string }): void;
 }>();
-function createTask(event) {
+function createTask(event: any) {
   event.preventDefault();
   const formData = new FormData(event.target);
   const data: { [key: string]: string } = {};

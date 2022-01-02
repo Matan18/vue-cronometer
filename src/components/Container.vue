@@ -33,7 +33,9 @@ function log(id: number) {
     if (item.selecionado) Object.assign(selected, item);
   });
 }
-const handleAddTask = (data) => list.push({ ...data, id: list.length + 1 });
+const handleAddTask = (
+  data: Omit<ITarefa, "id" | "selecionado" | "completado">
+) => list.push({ ...data, id: list.length + 1 });
 function handleFinishCountdown() {
   const item = list.find((item) => item.selecionado);
   if (item) {
